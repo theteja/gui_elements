@@ -1,0 +1,23 @@
+
+
+
+
+<suite name="GUIElementsSuite">
+
+    <listeners>
+        <listener
+            class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="GUIElementsTest">
+
+        <classes>
+
+            <class
+                name="tests.GUIElementsTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
