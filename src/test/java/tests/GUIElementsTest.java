@@ -66,14 +66,17 @@ public class GUIElementsTest extends BaseTest {
        // Thread.sleep(5000);
         
         
-     // Single File Upload
-     String file1 = "C:\\Users\\wprjavanguser\\Desktop\\New Text Document.txt";
+  // Single File Upload
+String file1 = Paths.get(
+    "src", "test", "resources", "New Text Document.txt"
+).toAbsolutePath().toString();
 
-     WebElement singleFile = driver.findElement(By.id("singleFileInput"));
-     singleFile.sendKeys(file1);
-     driver.findElement(By.xpath("//button[text()='Upload Single File']")).click();
-     Thread.sleep(3000);
-     System.out.println(driver.findElement(By.id("singleFileStatus")).getText());
+WebElement singleFile = driver.findElement(By.id("singleFileInput"));
+singleFile.sendKeys(file1);
+driver.findElement(By.xpath("//button[text()='Upload Single File']")).click();
+
+Thread.sleep(3000);
+System.out.println(driver.findElement(By.id("singleFileStatus")).getText());
 
 
 
