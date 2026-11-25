@@ -1,20 +1,12 @@
-
 pipeline {
     agent any
 
     tools {
         jdk 'JDK21'
-        maven 'Maven3'
+        maven 'Manven3'
     }
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                git '<https://github.com/theteja/gui_elements.git>'
-            }
-        }
-
         stage('Build') {
             steps {
                 bat 'mvn clean test'
@@ -23,10 +15,11 @@ pipeline {
     }
 
     post {
-
         always {
-
             publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
                 reportDir: 'reports',
                 reportFiles: 'ExtentReport.html',
                 reportName: 'Extent Report'
@@ -34,5 +27,3 @@ pipeline {
         }
     }
 }
-
-
