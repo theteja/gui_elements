@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import listeners.TestListener;
 import base.BaseTest;
 import pages.GUIElementsPage;
-
+import java.nio.file.Paths;
 
 @Listeners(TestListener.class)
 public class GUIElementsTest extends BaseTest {
